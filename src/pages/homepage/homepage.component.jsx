@@ -4,7 +4,6 @@ import './homepage.styles.scss'
 
 const HomePage = (props) => (
     <div className='homepage'>
-        <button onClick={() => props.history.push('/topics')}>Topics</button>
         <Directory />
     </div>
 );
