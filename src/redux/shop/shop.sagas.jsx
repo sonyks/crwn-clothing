@@ -5,10 +5,8 @@ import ShopActionTypes from './shop.types';
 import { fetchCollectionsSuccess, fetchCollectionsFailure } from './shop.actions';
 
 export function* fetchCollectionAsync() {
-    yield console.log('Fired action');
-
     try {
-        const collectionRef = firestore.collection('collections');
+        const collectionRef =  firestore.collection('collections');
 
         const snapshot = yield collectionRef.get();
         const collectionsMap = yield call(convertCollectionsSnapshotToMap, snapshot);
@@ -20,7 +18,7 @@ export function* fetchCollectionAsync() {
 }
 
 export function* fetchCollectionStart() {
-    yield takeLatest(ShopActionTypes.FETCH_COLLECTIONS_SUCCESS, fetchCollectionAsync);
+    yield takeLatest(ShopActionTypes.FETCH_COLLECTIONS_START, fetchCollectionAsync);
 }
 
 export function* shopSagas() {
