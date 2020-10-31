@@ -40,3 +40,26 @@
         font-size: 18px;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .collection-item {
+        width: 40vw;
+
+        &:hover {
+            .image {
+                opacity: unset;
+            }
+    
+            .custom-button {
+                opacity: unset;
+            }
+        }
+
+        .custom-button {
+            opacity: 0.9;
+            display: block;
+            min-width: unset;
+            padding: 0 10px 0 10px;
+        }
+    }
+}
